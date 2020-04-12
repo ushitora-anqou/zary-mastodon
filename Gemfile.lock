@@ -1,10 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     buftok (0.2.0)
-    crass (1.0.4)
+    crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     http (3.3.0)
@@ -14,7 +14,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    http-form_data (2.1.1)
+    http-form_data (2.3.0)
     http_parser.rb (0.6.0)
     mastodon-api (2.0.0)
       addressable (~> 2.6)
@@ -22,19 +22,19 @@ GEM
       http (~> 3.3)
       oj (~> 3.7)
     mini_portile2 (2.4.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    nokogumbo (2.0.1)
+    nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
-    oj (3.8.1)
-    public_suffix (3.1.1)
-    sanitize (5.0.0)
+    oj (3.10.6)
+    public_suffix (4.0.4)
+    sanitize (5.1.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.8.0)
       nokogumbo (~> 2.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
 
 PLATFORMS
   ruby
@@ -44,4 +44,4 @@ DEPENDENCIES
   sanitize
 
 BUNDLED WITH
-   1.17.3
+   1.17.2
