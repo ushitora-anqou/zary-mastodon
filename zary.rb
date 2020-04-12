@@ -27,15 +27,22 @@ class DummyClient
     def create_status(msg, options)
       pp(["out", { msg: msg, options: options }])
     end
+
+    def verify_credentials
+      OpenStruct.new({
+        id: "10",
+      })
+    end
   end
 
   def stream
     rest = DummyRest.new
     while gets
       event = OpenStruct.new({
-        id: 100,
+        id: "100",
         account: OpenStruct.new({ acct: "dummyuser0" }),
         content: $_,
+        mentions: [OpenStruct.new({ id: "10" })],
       })
       pp(["in", event])
       yield event, rest
@@ -57,5 +64,10 @@ client.stream do |event, rest|
   case content
   when /わいわい/
     rest.create_status("@#{event.account.acct} :bar_ter__: ＜わいわいするなわくわくしろ", in_reply_to_id: event.id)
+  when /ping/
+    # Includes @zary ?
+    if event.mentions.map(&:id).include?(rest.verify_credentials.id)
+      rest.create_status("@#{event.account.acct} pong", in_reply_to_id: event.id)
+    end
   end
 end
